@@ -13,7 +13,8 @@ jobs:
               chmod +x ~/docker-compose
               sudo mv ~/docker-compose /usr/local/bin/docker-compose
               sudo service docker start
-              sudo export DOCKER_HOST="tcp://0.0.0.0:2375"
+              sudo systemctl start docker
+              sudo docker-compose build
               docker info 
               sudo npm install @neuralegion/nexploit-cli -g --unsafe-perm=true || true
       - run:
