@@ -12,6 +12,8 @@ jobs:
               curl -L https://github.com/docker/compose/releases/download/1.25.3/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
               chmod +x ~/docker-compose
               sudo mv ~/docker-compose /usr/local/bin/docker-compose
+              sudo service docker start
+              sudo export DOCKER_HOST="tcp://0.0.0.0:2375"
               docker info 
               sudo npm install @neuralegion/nexploit-cli -g --unsafe-perm=true || true
       - run:
