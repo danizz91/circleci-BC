@@ -16,6 +16,11 @@ jobs:
             sudo apt-get install -y nodejs
             sudo npm install @neuralegion/nexploit-cli -g --unsafe-perm=true || true
       - run:
+         name: Save eniroment variables
+         command: |
+          printf "NEXPLOIT_TOKEN=${NEXPLOIT_TOKEN}\nREPEATER=${secrets.REPEATER}\n" > .env
+          cat .env
+      - run:
          name: Docker-Compose
          command: |
             sudo docker-compose up -d
