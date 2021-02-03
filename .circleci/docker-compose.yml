@@ -1,0 +1,13 @@
+version: '3'
+services:
+  juiceshop.local:
+    image: bkimminich/juice-shop
+    ports:
+          - "3000:3000"
+  repeater:
+    image: neuralegion/repeater:latest
+    restart: always
+    environment:
+      REPEATER_TOKEN: $NEXPLOIT_TOKEN
+      REPEATER_AGENT: $REPEATER
+      DEBUG: nexploit-cli
