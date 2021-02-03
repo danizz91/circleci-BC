@@ -24,7 +24,7 @@ jobs:
       - run:
          name: Docker-Compose
          command: |
-            sudo docker-compose build
+            sudo docker-compose docker-compose.yml up
             sudo docker-compose --env-file=.env up -d
             sudo docker-compose config
       - run:
