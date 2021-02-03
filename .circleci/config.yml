@@ -16,7 +16,7 @@ jobs:
       - run:
          name: Save eniroment variables
          command: |
-            printf export "NEXPLOIT_TOKEN=$NEXPLOIT_TOKEN\nREPEATER=$REPEATER\n" > .env
+            printf "NEXPLOIT_TOKEN=$NEXPLOIT_TOKEN\nREPEATER=$REPEATER\n" > .env
             cat .env
             echo $NEXPLOIT_TOKEN
             echo $REPEATER
