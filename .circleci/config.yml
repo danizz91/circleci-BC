@@ -16,8 +16,11 @@ jobs:
       - run:
          name: Save eniroment variables
          command: |
-            printf "NEXPLOIT_TOKEN=$NEXPLOIT_TOKEN\nREPEATER=$REPEATER\n" > .env
+            printf export "NEXPLOIT_TOKEN=$NEXPLOIT_TOKEN\nREPEATER=$REPEATER\n" > .env
             cat .env
+            echo $NEXPLOIT_TOKEN
+            echo $REPEATER
+            echo .env
       - run:
          name: Docker-Compose
          command: |
