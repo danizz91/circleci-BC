@@ -24,6 +24,7 @@ jobs:
       - run:
          name: Docker-Compose
          command: |
+            cat .env
             sudo docker-compose --env-file=.env up -d
             sudo docker-compose config
       - run:
