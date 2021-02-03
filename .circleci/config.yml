@@ -6,6 +6,8 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
+      - setup_remote_docker:
+          version: 19.03.13
       - run:
           name: Install Dependecies
           command: |
@@ -13,8 +15,6 @@ jobs:
               chmod +x ~/docker-compose
               sudo mv ~/docker-compose /usr/local/bin/docker-compose
               sudo service docker start
-              sudo systemctl start docker
-              sudo docker-compose build
               docker info 
               sudo npm install @neuralegion/nexploit-cli -g --unsafe-perm=true || true
       - run:
