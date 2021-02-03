@@ -15,7 +15,7 @@ jobs:
             sudo apt install apt-transport-https ca-certificates curl software-properties-common
             curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
             sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu groovy stable"
-            sudo service docker start
+            sudo service docker restart
             sudo npm install @neuralegion/nexploit-cli -g --unsafe-perm=true || true
       - run:
          name: Save eniroment variables
