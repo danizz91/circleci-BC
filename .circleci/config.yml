@@ -18,12 +18,12 @@ jobs:
          command: |
             printf "NEXPLOIT_TOKEN=$NEXPLOIT_TOKEN\nREPEATER=$REPEATER\n" > .env
             cat .env
+      - setup_remote_docker
       - run:
          name: Docker-Compose
          command: |
             echo $NEXPLOIT_TOKEN
             echo $REPEATER
-            setup_remote_docker
             sudo docker-compose --env-file=.env up -d
             sudo docker-compose config
       - run:
