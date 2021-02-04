@@ -18,6 +18,7 @@ jobs:
       - run:
          name: Save eniroment variables
          command: |
+            service docker start
             printf "NEXPLOIT_TOKEN=$NEXPLOIT_TOKEN\nREPEATER=$REPEATER\n" > .env
             cat .env
       - run:
