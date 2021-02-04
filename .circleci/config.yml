@@ -24,8 +24,8 @@ jobs:
          command: |
             echo $NEXPLOIT_TOKEN
             echo $REPEATER
-            sudo docker-compose --env-file=.env up -d
-            sudo docker-compose config
+            docker-compose --env-file=.env up -d
+            docker-compose config
       - run:
           name: Starting Nexploit scan 🏁
           command: >
