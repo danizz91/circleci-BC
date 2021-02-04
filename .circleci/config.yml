@@ -31,8 +31,8 @@ jobs:
           command: >
               echo export SCAN_ID=$(nexploit-cli scan:run --token $NEXPLOIT_TOKEN
               --repeater $REPEATER
-              --name "BC Scan from CircleCI"
-              --crawler https://brokencrystals.neuralegion.com
+              --name "CIRCLECI TEST"
+              --crawler https://brokencrystals.com/
               --smart) >> "$BASH_ENV"
       - run: 
           name: Get the output scan url 🔗
