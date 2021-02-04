@@ -13,12 +13,13 @@ jobs:
             sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
             sudo chmod +x /usr/local/bin/docker-compose
             sudo npm install @neuralegion/nexploit-cli -g --unsafe-perm=true || true
+      - setup_remote_docker
+
       - run:
          name: Save eniroment variables
          command: |
             printf "NEXPLOIT_TOKEN=$NEXPLOIT_TOKEN\nREPEATER=$REPEATER\n" > .env
             cat .env
-      - setup_remote_docker
       - run:
          name: Docker-Compose
          command: |
