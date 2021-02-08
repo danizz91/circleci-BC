@@ -32,20 +32,12 @@ jobs:
               echo export SCAN_ID=$(nexploit-cli scan:run --token $NEXPLOIT_TOKEN
               --repeater $REPEATER
               --name "CIRCLECI TEST"
-              --crawler https://brokencrystals.com/
+              --crawler http://juiceshop.local:3000
               --smart) >> "$BASH_ENV"
       - run: 
           name: Get the output scan url 🔗
           command: |
             printf "Scan was started with ID https://nexploit.app/scans/${SCAN_ID}"
-      - run:
-          name: Waiting for issues ⏳
-          command: >
-              (nexploit-cli scan:polling
-              --interval 30s
-              --timeout 20m
-              --token $NEXPLOIT_TOKEN
-              --breakpoint medium_issue ${SCAN_ID})
       - run:
           name: Stop Scan 🛑
           when: on_fail
