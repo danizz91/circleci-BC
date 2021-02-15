@@ -1,4 +1,3 @@
-# Starter pipeline
 - task: NexPloitScan@3
   inputs:
     apiToken: 'lni1xef.nexp.g0gdsgoeqcbmmr38ywcksx9pbjew2g62'
