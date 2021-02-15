@@ -1,5 +1,5 @@
 - task: NexPloitScan@3
-  inputs:
+  parameters:
     apiToken: 'lni1xef.nexp.g0gdsgoeqcbmmr38ywcksx9pbjew2g62'
     hostname: 'nexploit.app'
     module: 'dast'
