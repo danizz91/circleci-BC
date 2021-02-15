@@ -1,8 +1,5 @@
-- task: NexPloitScan@3
-  parameters:
+- task: NexPloitRerunScan@3
+  inputs:
     apiToken: 'lni1xef.nexp.g0gdsgoeqcbmmr38ywcksx9pbjew2g62'
     hostname: 'nexploit.app'
-    module: 'dast'
-    discoveryTypes: 'crawler'
-    crawlerUrls: 'https://brokencrystals.com/'
-    scanTests: 'angular_csti,jwt,date_manipulation,cookie_security,csrf,directory_listing,dom_xss,file_upload,full_path_disclosure,header_security,http_method_fuzzing,secret_tokens,version_control_systems,wordpress'
+    scanId: 'tJ7E1q7dpjiLGqMuSuodVM'
